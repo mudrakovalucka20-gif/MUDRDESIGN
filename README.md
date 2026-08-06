@@ -11,6 +11,26 @@ js/main.js        # mobilní menu + rok v patičce
 assets/           # obrázky (zatím prázdné, viz níže)
 ```
 
+## Mapa stránky
+
+Každá sekce v `index.html` je uvozená komentářem `<!-- ==== NÁZEV ==== -->`,
+takže se dá rychle najít vyhledáním.
+
+| # | Sekce v návrhu | HTML | CSS třída |
+|---|---|---|---|
+| 1 | logo, menu, fialové CTA | `<header class="site-header">` | `.site-header`, `.nav` |
+| 2 | „Vaší značce nasadíme…" + vak + 5 služeb | `<section class="hero">` | `.hero`, `.hero__services` |
+| 3 | „Co obsahuje naše infuze?" (8 ikon) | `#sluzby` | `.capabilities` |
+| 4 | „Grafika sama o sobě neprodává." | `#o-nas` | `.split` |
+| 5 | „Případy z praxe" (4 dlaždice) | `#prace` | `.cases`, `.case` |
+| 6 | „Ne každá značka…" + „Grafika je jen začátek" | `.section--duo` | `.duo`, `.card`, `.tiles` |
+| 7 | „Proč právě mudr.design?" (7 ikon) | `.section--light` | `.capabilities--7` |
+| 8 | formulář „Připojte svou značku…" | `#kontakt` | `.contact`, `.contact__form` |
+| 9 | patička | `<footer class="site-footer">` | `.site-footer` |
+
+Ikony jsou inline SVG přímo v HTML (uvnitř `<span class="ico">`), ne obrázky —
+mění se jim barva jedním CSS pravidlem a nic se nenačítá zvenčí.
+
 ## Co ještě chybí
 
 Do `assets/` je potřeba doplnit obrázky z návrhu. HTML na ně už odkazuje:
