@@ -11,6 +11,16 @@ js/main.js        # mobilní menu + rok v patičce
 assets/           # obrázky (zatím prázdné, viz níže)
 ```
 
+## Jak si stránku prohlédnout
+
+**Nejrychleji — `nahled.html`.** Jeden soubor, který má CSS i JavaScript vevnitř.
+Stáhni ho samotný (*Raw → uložit jako*) a otevři dvojklikem. Funguje i bez internetu.
+Je to jen náhled, needituj ho — generuje se z `index.html` a `css/style.css`.
+
+**Ostrá verze — `index.html`.** Ta si CSS načítá ze souboru `css/style.css`,
+takže potřebuje celou složku. Když stáhneš jen `index.html`, zobrazí se bez stylů.
+Správně: *Code → Download ZIP*, rozbalit celé, otevřít `index.html`.
+
 ## Mapa stránky
 
 Každá sekce v `index.html` je uvozená komentářem `<!-- ==== NÁZEV ==== -->`,
