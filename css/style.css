@@ -2,25 +2,37 @@
    mudr.design — landing page
    ========================================================= */
 
+/* Hodnoty odečtené z mudrdesign.cz — drží stejný vizuální jazyk. */
+
 :root{
-  /* barvy */
-  --c-bg:          #F2EDE7;
-  --c-bg-light:    #F7F4F0;
+  /* --- barvy --- */
+  --c-bg:          #F6EEE5;  /* hlavní teplé pozadí */
+  --c-bg-light:    #FFFDF9;  /* světlejší pruh sekce */
   --c-bg-white:    #FFFFFF;
-  --c-ink:         #16151A;
-  --c-ink-soft:    #4A4750;
-  --c-purple:      #6C3EE0;
-  --c-purple-dark: #3B1B7A;
-  --c-accent:      #E8663C;
-  --c-line:        #E2DAD1;
 
-  /* typografie */
-  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --c-ink:         #333333;  /* běžný text */
+  --c-ink-soft:    #5C5C5C;
+  --c-head:        #3A2A6F;  /* nadpisy — tmavá fialová */
 
-  /* rozměry */
+  --c-purple:      #52009C;  /* tlačítka, hlavní akce */
+  --c-purple-light:#8D5AD3;  /* zvýrazněná slova v textu */
+  --c-purple-dark: #3A2A6F;
+
+  --c-accent:      #FF6700;  /* oranžová — znaky „+", eyebrow */
+  --c-accent-2:    #CC3366;  /* doplňková růžová */
+
+  --c-line:        #E7DCCE;
+
+  /* --- typografie --- */
+  --font-head: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font: var(--font-body);
+
+  /* --- rozměry --- */
   --container: 1240px;
   --radius:    18px;
   --radius-lg: 26px;
+  --radius-btn:10px;
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -29,9 +41,9 @@ html{ scroll-behavior:smooth; }
 
 body{
   margin:0;
-  font-family:var(--font);
+  font-family:var(--font-body);
   font-size:16px;
-  line-height:1.65;
+  line-height:1.5;          /* 16/24 jako na mudrdesign.cz */
   color:var(--c-ink);
   background:var(--c-bg);
   -webkit-font-smoothing:antialiased;
@@ -55,7 +67,25 @@ a{ color:inherit; }
 
 /* ---------- typografie ---------- */
 
-h1,h2,h3{ margin:0; font-weight:600; letter-spacing:-.02em; line-height:1.15; }
+/* Nadpisy — Source Serif 4, 600, záporný prostrk, tmavě fialová.
+   H1 50/62 (-1.5px), H2 33/46 (-0.66px) — poměry z mudrdesign.cz. */
+
+h1,h2{
+  margin:0;
+  font-family:var(--font-head);
+  font-weight:600;
+  letter-spacing:-.03em;
+  line-height:1.24;
+  color:var(--c-head);
+}
+
+h3{
+  margin:0;
+  font-family:var(--font-body);
+  font-weight:600;
+  line-height:1.2;
+  color:#000;
+}
 
 .h2{
   font-size:clamp(28px,3.4vw,40px);
@@ -63,7 +93,9 @@ h1,h2,h3{ margin:0; font-weight:600; letter-spacing:-.02em; line-height:1.15; }
 }
 
 .section__title{
-  font-size:clamp(24px,2.6vw,30px);
+  font-family:var(--font-head);
+  font-size:clamp(26px,2.8vw,33px);
+  letter-spacing:-.02em;
   margin:0 0 40px;
 }
 
@@ -76,7 +108,7 @@ h1,h2,h3{ margin:0; font-weight:600; letter-spacing:-.02em; line-height:1.15; }
   color:var(--c-accent);
 }
 
-.accent{ color:var(--c-purple); }
+.accent{ color:var(--c-purple-light); }
 
 .plus{
   color:var(--c-accent);
@@ -107,14 +139,17 @@ h1,h2,h3{ margin:0; font-weight:600; letter-spacing:-.02em; line-height:1.15; }
   font-family:inherit;
 }
 
+/* Tlačítka podle mudrdesign.cz: #52009C, radius 10px, 700, prostrk 1,2px */
 .btn--primary{
   background:var(--c-purple);
   color:#fff;
-  padding:14px 24px;
-  border-radius:999px;
+  font-weight:700;
+  letter-spacing:.07em;
+  padding:16px 26px;
+  border-radius:var(--radius-btn);
   transition:background .2s ease, transform .2s ease;
 }
-.btn--primary:hover{ background:#5A2FC9; transform:translateY(-1px); }
+.btn--primary:hover{ background:#43007F; transform:translateY(-1px); }
 
 .btn--link{
   color:var(--c-ink);
